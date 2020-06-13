@@ -26,10 +26,11 @@ class ProjectsController extends Controller
     {
         // validate
         $attributes = request()->validate([
-            'owner_id' => 'required',
             'title' => 'required',
             'description' => 'required'
         ]);
+
+        $attributes['owner_id'] = auth()->id();
 
         // persist
         Project::create($attributes);

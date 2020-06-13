@@ -61,10 +61,8 @@ class ProjectsTest extends TestCase
     /** @test */
     public function a_project_requires_an_owner()
     {
-        // $this->withoutExceptionHandling();
-
-        $attributes = factory('App\Project')->raw(['owner_id' => null]);
+        $attributes = factory('App\Project')->raw();
  
-        $this->post('/projects', $attributes)->assertSessionHasErrors('owner_id');
+        $this->post('/projects', $attributes)->assertRedirect('login');
     }
 }
