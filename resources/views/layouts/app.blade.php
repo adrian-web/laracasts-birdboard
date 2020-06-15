@@ -26,10 +26,11 @@
         <nav class="bg-white">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-2">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-
+                    <h1>
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src="/images/logo.svg" alt="Birdboard">
+                        </a>
+                    </h1>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                         <!-- Right Side Of Navbar -->
