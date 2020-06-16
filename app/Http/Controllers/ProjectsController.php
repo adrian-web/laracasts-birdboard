@@ -40,9 +40,9 @@ class ProjectsController extends Controller
         ]);
 
         // persist
-        auth()->user()->projects()->create($attributes);
+        $project = auth()->user()->projects()->create($attributes);
 
         // redirect
-        return redirect('/projects');
+        return redirect($project->path());
     }
 }
