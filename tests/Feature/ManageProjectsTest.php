@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Support\Str;
+use app\Project;
 
 class ManageProjectsTest extends TestCase
 {
@@ -39,7 +40,9 @@ class ManageProjectsTest extends TestCase
 
         // $this->post(route('projects.store'));
         // requires withoutExceptionHandling to get an error in case route is undefined
-        $this->post('/projects', $attributes)->assertRedirect('/projects');
+        $response = $this->post('/projects', $attributes);
+
+        $response->assertRedirect(Project::where($attributes)->first()->path());
 
         $this->assertDatabaseHas('projects', $attributes);
 
