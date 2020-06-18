@@ -43,6 +43,8 @@ class ProjectsController extends Controller
 
     public function edit(Project $project)
     {
+        $this->authorize('update', $project);
+
         return view('projects.edit', compact('project'));
     }
 
@@ -60,9 +62,9 @@ class ProjectsController extends Controller
     protected function validateRequest()
     {
         return request()->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'notes' => 'min:3'
+            'title' => 'sometimes|required',
+            'description' => 'sometimes|required',
+            'notes' => 'nullable'
         ]);
     }
 }

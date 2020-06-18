@@ -8,8 +8,7 @@
     </h1>
     <form method="POST" action="/projects">
         @include('projects._form', [
-        'project' => new App\Project,
-        'buttonText' => 'Create Project'
+        'project' => new App\Project
         ])
     </form>
 </div>

@@ -9,9 +9,7 @@
     <form method="POST" action="{{ $project->path() }}">
         @method('PATCH')
 
-        @include('projects._form', [
-        'buttonText' => 'Update Project'
-        ])
+        @include('projects._form')
     </form>
 </div>
 @endsection
