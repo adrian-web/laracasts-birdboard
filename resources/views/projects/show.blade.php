@@ -13,25 +13,25 @@
 </header>
 
 <main>
+    <h2 class="text-lg text-gray-600 font-normal mb-3">Tasks</h2>
     <div class="flex -mx-3">
+
         <div class="lg:w-3/4 px-3">
             <div class="mb-8">
-                <h2 class="text-lg text-gray-600 font-normal mb-3">Tasks</h2>
                 {{-- Tasks --}}
                 @foreach($project->tasks as $task)
-                    <div class="card mb-3">
-                        <form action="{{ $task->path() }}" method="post">
-                            @method('PATCH')
-                            @csrf
-                            <div class="flex">
-                                <input type="text" value="{{ $task->body }}" name="body"
-                                    class="w-full
+                <div class="card mb-3">
+                    <form action="{{ $task->path() }}" method="post">
+                        @method('PATCH')
+                        @csrf
+                        <div class="flex">
+                            <input type="text" value="{{ $task->body }}" name="body" class="w-full
                                     {{ $task->completed ? 'text-gray-600' : '' }}">
-                                <input type="checkbox" name="completed" onchange="this.form.submit()"
-                                    {{ $task->completed ? 'checked' : '' }}>
-                            </div>
-                        </form>
-                    </div>
+                            <input type="checkbox" name="completed" onchange="this.form.submit()"
+                                {{ $task->completed ? 'checked' : '' }}>
+                        </div>
+                    </form>
+                </div>
                 @endforeach
                 <div class="card">
                     <form action="{{ $project->path() . '/tasks' }}" method="post">
@@ -55,10 +55,9 @@
         </div>
         <div class="lg:w-1/4 px-3">
             @include('projects.card')
+            @include('projects.activity.card')
         </div>
     </div>
 </main>
-
-
 
 @endsection
