@@ -11,6 +11,8 @@ $factory->define(Project::class, function (Faker $faker) {
             return factory(App\User::class)->create()->id;
         },
         'title' => $faker->sentence(4),
-        'description' => $faker->sentence(4)
+        'description' => $faker->sentence(4),
+        'notes' => $faker->sentence(4),
+
     ];
 });
