@@ -37,7 +37,17 @@ class ProjectsController extends Controller
         // persist
         $project = auth()->user()->projects()->create($attributes);
 
+        if ($tasks = request('tasks')) {
+            $project->addTasks(array_filter($tasks, function ($task) {
+                return $task['body'] != '';
+            }));
+        }
+
         // redirect
+        if (request()->wantsJson()) {
+            return ['message' => $project->path()];
+        }
+        
         return redirect($project->path());
     }
 
