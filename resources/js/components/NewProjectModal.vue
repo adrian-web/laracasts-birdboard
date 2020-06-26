@@ -44,9 +44,9 @@
               <input
                 type="text"
                 class="border border-gray-200 mb-2 p-2 text-xs block w-full"
-                placeholder="Task"
-                v-for="task in form.tasks"
+                v-for="(task, index) in form.tasks"
                 v-model="task.body"
+                :key="index"
               />
             </div>
 

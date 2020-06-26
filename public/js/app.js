@@ -2041,7 +2041,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -38551,7 +38550,7 @@ var render = function() {
                     _vm._v("Tasks?")
                   ]),
                   _vm._v(" "),
-                  _vm._l(_vm.form.tasks, function(task) {
+                  _vm._l(_vm.form.tasks, function(task, index) {
                     return _c("input", {
                       directives: [
                         {
@@ -38561,10 +38560,10 @@ var render = function() {
                           expression: "task.body"
                         }
                       ],
-                      key: task.body,
+                      key: index,
                       staticClass:
                         "border border-gray-200 mb-2 p-2 text-xs block w-full",
-                      attrs: { type: "text", placeholder: "Task" },
+                      attrs: { type: "text" },
                       domProps: { value: task.body },
                       on: {
                         input: function($event) {
