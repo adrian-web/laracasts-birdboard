@@ -9,7 +9,7 @@
 
 ## About a project
 
-Simple project management app, complete with MySQL database, PHP API and HTML form to add and edit entities.
+Simple project management app with Laravel and TDD.
 
 Data structure
 1. User entity with at least name field.
@@ -17,7 +17,7 @@ Data structure
 3. Projects can have tasks and notes associated with them.
 4. Task entity with at least body and completion fields.
 
-API Endpoints
+Route endpoints
 1. Get all projects associated with a user.
 2. Invite other users to your project.
 3. Add notes and tasks to a given project.
@@ -29,7 +29,7 @@ To visit projects page ('/projects'), you have to be logged in (registration req
 
 To login/register, look up to top right corner of a website (at '/' route) or manually visit '/login' or '/register'.
 
-From a main route '/projects' you can visit specific routes through hyperlinks:
+From a main route '/projects' you can visit specific routes:
 - explore all your projects,
 - visit a specific project,
 - add notes or tasks to a project,
