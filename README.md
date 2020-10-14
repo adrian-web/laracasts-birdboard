@@ -11,31 +11,6 @@
 
 Simple project management app with Laravel and TDD.
 
-Data structure
-1. User entity with at least name field.
-2. Project entity with at least owner, title and description fields.
-3. Projects can have tasks and notes associated with them.
-4. Task entity with at least body and completion fields.
-
-Route endpoints
-1. Get all projects associated with a user.
-2. Invite other users to your project.
-3. Add notes and tasks to a given project.
-4. Get an activity feed related to a project.
-
-## How to navigate a project
-
-To visit projects page ('/projects'), you have to be logged in (registration required).
-
-To login/register, look up to top right corner of a website (at '/' route) or manually visit '/login' or '/register'.
-
-From a main route '/projects' you can visit specific routes:
-- explore all your projects,
-- visit a specific project,
-- add notes or tasks to a project,
-- submit edits to a project or create a new project,
-- invite another user to a project.
-
 ## How to setup a Laravel project from github repository
 
 1. Download .zip file from a given github repository.
